@@ -10,8 +10,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/AllanBartoo/four-card-feature-section
+- Live Site URL: https://allanbartoo.github.io/four-card-feature-section
 
 ### Built with
 - Semantic HTML5 markup
