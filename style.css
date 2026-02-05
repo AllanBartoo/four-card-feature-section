@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Font size */
+  --font-scale: 1.25;
+  --text-base: 0.938rem;
+  --text-xs: calc(var(--text-base) / var(--font-scale));
+  --text-sm: calc(var(--text-xs) * var(--font-scale));
+  --text-md: var(--text-base);
+  --text-lg: calc(var(--text-md) * var(--font-scale));
+  --text-xl: calc(var(--text-lg) * var(--font-scale));
+
+  /* spacing scale */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 1rem; /* 16px */
+  --space-4: 1.5rem; /* 24px */
+  --space-5: 2rem; /* 32px */
+  --space-6: 3rem; /* 48px */
+
+  /* Font weight */
+  --weight200: 200;
+  --weight400: 400;
+  --weight600: 600;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--text-md);
+  padding: var(--space-3);
+  background-color: var(--white);
+}
+
+h1 {
+  font-size: var(--text-xl);
+  color: var(--grey-500);
+  font-weight: var(--weight600);
+  margin-bottom: var(--space-3);
+}
+
+span {
+  font-size: var(--text-xl);
+  font-weight: var(--weight200);
+  color: var(--grey-400);
+  margin-bottom: var(--space-1);
+}
+
+.main {
+  text-align: center;
+}
+
+.main-text {
+  color: var(--grey-400);
+  font-size: var(--text-sm);
+  line-height: 1.25;
+  margin-bottom: var(--space-6);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+  gap: var(--space-4);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+article {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: var(--space-4);
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+article:hover {
+  transform: scale(1.03);
+}
+
+article p {
+  color: var(--grey-400);
+  font-weight: var(--weight400);
+  font-size: var(--text-xs);
+}
+
+article img {
+  margin-top: var(--space-5);
+  float: right;
+}
+
+h2 {
+  font-size: var(--text-lg);
+  color: var(--grey-500);
+  font-weight: var(--weight600);
+  margin-bottom: var(--space-1);
+}
+
+.container-one {
+  grid-area: one;
+  border-top: 3px solid var(--cyan);
+}
+
+.container-two {
+  grid-area: two;
+  border-top: 3px solid var(--red);
+}
+
+.container-three {
+  grid-area: three;
+  border-top: 3px solid var(--orange);
+}
+
+.container-four {
+  grid-area: four;
+  border-top: 3px solid var(--blue);
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "one two"
+      "three four";
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "one two four"
+      "one three four";
+  }
+
+  .container-one, .container-four {
+    align-self: center;
+  }
+}
